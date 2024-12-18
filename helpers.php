@@ -18,3 +18,10 @@ function inspect($value)
   var_dump($value);
   echo '</pre>';
 }
+
+function hasParams($route){
+    if(!preg_match('/\{(.+?)\}/', $route)){
+        return false;
+    }
+    return true;
+}

@@ -11,9 +11,15 @@ class Router
       $requestMethod = strtoupper($_POST['_method']);
     }
 
+    
+
     echo "$requestMethod -> $uri </br>";
     foreach ($this->routes as $route) {
       print_r($route);
+      if(hasParams($route["uri"])){
+        echo "<b>route {$route["uri"]} has params, aborting...</b></br>";
+        return;
+      }
       $instance = new $route["controller"];
       $methodtocall = $route["controllerMethod"];
       $instance->$methodtocall();
@@ -22,6 +28,12 @@ class Router
 
       print_r($uriSegments);
       print_r($routeSegments);
+
+      if(!hasParams($route["uri"])){
+        echo "<b>route {$route["uri"]} has no params</b></br>";
+      }
+
+     
 
       $match = true;
 
