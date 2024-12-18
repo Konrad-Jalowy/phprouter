@@ -26,9 +26,9 @@ class Router
     ];
   }
 
-  public function get($uri, $controller, $middleware = [])
+  public function get($uri, $controller)
   {
-    $this->registerRoute('GET', $uri, $controller, $middleware);
+    $this->registerRoute('GET', $uri, $controller);
   }
 
   
