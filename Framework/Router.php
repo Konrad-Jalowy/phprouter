@@ -20,18 +20,26 @@ class Router
         echo "<b>route {$route["uri"]} has params, aborting...</b></br>";
         return;
       }
-      $instance = new $route["controller"];
-      $methodtocall = $route["controllerMethod"];
-      $instance->$methodtocall();
+
+      if(!hasParams($route["uri"])){
+        echo "<b>route {$route["uri"]} has no params</b></br>";
+        if($route["uri"] === $uri){
+          $instance = new $route["controller"];
+          $methodtocall = $route["controllerMethod"];
+          $instance->$methodtocall();
+          return;
+        }
+      }
+      
+      
       $uriSegments = explode('/', trim($uri, '/'));
       $routeSegments = explode('/', trim($route['uri'], '/'));
+      
 
       print_r($uriSegments);
       print_r($routeSegments);
 
-      if(!hasParams($route["uri"])){
-        echo "<b>route {$route["uri"]} has no params</b></br>";
-      }
+     
 
      
 
