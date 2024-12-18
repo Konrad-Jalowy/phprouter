@@ -5,6 +5,6 @@ class HomeController {
         loadView('index');
     }
     public function single($id){
-        echo "showing single item with id: $id </br>";
+        loadView('single');
     }
 };
