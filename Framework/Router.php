@@ -14,10 +14,11 @@ class Router
     echo "$requestMethod -> $uri </br>";
     foreach ($this->routes as $route) {
       print_r($route);
-      
+      $instance = new $route["controller"];
+      var_dump($instance);
       $uriSegments = explode('/', trim($uri, '/'));
       $routeSegments = explode('/', trim($route['uri'], '/'));
-      
+
       print_r($uriSegments);
       print_r($routeSegments);
     }

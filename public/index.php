@@ -5,6 +5,11 @@ spl_autoload_register(function($class){
     $path = basePath("Framework/$class.php");
     if(file_exists($path)){
         require_once $path;
+    } else {
+        $path = basePath("App/Controllers/$class.php");
+        if(file_exists($path)){
+            require_once $path;
+        }
     }
 });
 
