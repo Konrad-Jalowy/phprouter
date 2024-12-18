@@ -14,6 +14,12 @@ class Router
     echo "$requestMethod -> $uri </br>";
     foreach ($this->routes as $route) {
       print_r($route);
+      
+      $uriSegments = explode('/', trim($uri, '/'));
+      $routeSegments = explode('/', trim($route['uri'], '/'));
+      
+      print_r($uriSegments);
+      print_r($routeSegments);
     }
   }
 
