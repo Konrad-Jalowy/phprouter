@@ -17,7 +17,9 @@ I also need some type of db connection, session and cookies support, do it in co
 I did it all in my old project but it was some time since i coded OOP pure-php code and i need some warmup before i start re-creating it and improving </br>
 It was challenging project i barely got working and barely understood back then. Since then i havent coded much in pure-php oop. So i need some warmup </br>
 I do it totally in my free time, when i dont focus on languages i learn/use mostly right now. But there will be more project with the aim to make great php-written mvc framework. </br>
-
+## Thoughts (TODO next project):
+- In next iteration there will be middleware
+- In next iteration session will be solved using middleware
 ## Before creation (old readmemd):
 Ive already done huge mvc framework project that was basically 3 other (not mine) projects combined + my own ideas </br>
 Still it was long time ago and i want to re-visit the concept. </br>
