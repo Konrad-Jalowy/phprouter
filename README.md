@@ -6,6 +6,7 @@
 - I added pseudo-templating. Its nothing like templating engine i created for my old project and intend to re-create and improve, but its still something. Im doing these mvc php frameworks as side projects, i dont even use LAMP stack anymore, but i must admit, its hell of a fun to code in PHP... but its been some time since i wrote some PHP so i need some warmup... there will be some standalone components (router, templating engine, other components) and their variations coming, then ill combine it all into one, great PHP-written MVC framework. For fun, because i feel like writing in this language, thats why.
 
 ### PREVIOUS NEWS ITEMS:
+- EDIT: Done. Btw i know that you could use DB to achieve that (or even websockets). But thats the challenge and beauty of it that you want to count active users by counting sess temp files but then again you dont want false positives (like thers 1000 sess files but thers 10 people active during last 5 minutes). Solving problems like that is my idea of fun...
 - I added online counting users (within last 5 minutes and without any false positives). This was my idea completely and pretty clever, basically we count all sess files, but the are many of false positives, so we check for access/modification time and compare within last 5 minutes </br> </br>
 Of course for it to work we also need middleware, that does some stupid action on every request, here is stupid action:
 ```php
