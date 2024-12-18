@@ -57,9 +57,9 @@ class Router
         }
 
       }
-      
      
     }
+    
   }
 
   public function registerRoute($method, $uri, $action)
