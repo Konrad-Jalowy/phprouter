@@ -1,5 +1,17 @@
 # phprouter 
 
+## Latest news:
+I added online counting users (within last 5 minutes and without any false positives). This was my idea completely and pretty clever, basically we count all sess files, but the are many of false positives, so we check for access/modification time and compare within last 5 minutes </br> </br>
+Of course for it to work we also need middleware, that does some stupid action on every request, here is stupid action:
+```php
+public static function onEveryRequestMiddleware(){
+    static::start();
+    static::set("_cache", (string)time());
+}
+```
+Now, in the next routing project ill have middleware and i want to combine this old idea of mine with the router that has middleware. </br>
+In this project i think were mostly done, but idk, maybe ill add something to it, but for me its finished and we continue work in the next project...
+
 ## how to start server
 ok well use such command to start a server:
 ```sh
