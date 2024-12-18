@@ -8,4 +8,7 @@ class HomeController {
         $person = (object)["name" => "Jane Doe $id", "age" => (18+$id), "gender" => "Female"];
         loadView('single', compact('person'));
     }
+    public function active(){
+        loadView('active', ["number" => 42]);
+    }
 };
