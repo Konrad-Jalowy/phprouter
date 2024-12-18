@@ -15,6 +15,8 @@ class Router
     foreach ($this->routes as $route) {
       print_r($route);
       $instance = new $route["controller"];
+      $methodtocall = $route["controllerMethod"];
+      $instance->$methodtocall();
       var_dump($instance);
       $uriSegments = explode('/', trim($uri, '/'));
       $routeSegments = explode('/', trim($route['uri'], '/'));
