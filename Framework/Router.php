@@ -12,6 +12,9 @@ class Router
     }
 
     echo "$requestMethod -> $uri </br>";
+    foreach ($this->routes as $route) {
+      print_r($route);
+    }
   }
 
   public function registerRoute($method, $uri, $action)

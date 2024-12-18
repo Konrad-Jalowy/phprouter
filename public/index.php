@@ -9,6 +9,7 @@ spl_autoload_register(function($class){
 });
 
 $router = new Router();
+$routes = require basePath('routes.php');
 $session = new Session();
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
