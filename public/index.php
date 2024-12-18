@@ -10,10 +10,7 @@ spl_autoload_register(function($class){
 
 $router = new Router();
 $session = new Session();
-var_dump($router);
-var_dump($session);
-echo "</br>";
-echo "hello world</br>";
+
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$method = $_SERVER['REQUEST_METHOD'];
-echo "$method->$uri";
+
+$router->route($uri);
