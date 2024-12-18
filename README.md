@@ -20,6 +20,11 @@ I do it totally in my free time, when i dont focus on languages i learn/use most
 ## Thoughts (TODO next project):
 - In next iteration there will be middleware
 - In next iteration session will be solved using middleware
+- In next iteration routing code will be cleaner
+- In next iteration there will be composer project and better bootstraping of the project
+- Ive done all of that doing MVC framework long time ago but i need to refresh my pure-PHP OOP knowledge
+- Remember to add composer script to run server with one command
+- Well try to do templating engine as side project and then combine with the router
 ## Before creation (old readmemd):
 Ive already done huge mvc framework project that was basically 3 other (not mine) projects combined + my own ideas </br>
 Still it was long time ago and i want to re-visit the concept. </br>
