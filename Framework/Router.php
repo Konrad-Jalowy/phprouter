@@ -17,7 +17,6 @@ class Router
       $instance = new $route["controller"];
       $methodtocall = $route["controllerMethod"];
       $instance->$methodtocall();
-      var_dump($instance);
       $uriSegments = explode('/', trim($uri, '/'));
       $routeSegments = explode('/', trim($route['uri'], '/'));
 
@@ -25,6 +24,13 @@ class Router
       print_r($routeSegments);
 
       $match = true;
+
+      if (count($uriSegments) === count($routeSegments) && strtoupper($route['method'] === $requestMethod)) {
+        $params = [];
+
+        $match = true;
+        echo "there is match";
+      }
     }
   }
 
