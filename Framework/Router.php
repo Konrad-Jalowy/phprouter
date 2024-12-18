@@ -51,6 +51,12 @@ class Router
               echo "no match </br>";
               break;
             }
+            if (preg_match('/\{(.+?)\}/', $routeSegments[$i], $matches)) {
+              // echo $matches[1];
+              // echo $uriSegments[$i];
+              $params[$matches[1]] = $uriSegments[$i];
+              print_r($params);
+            }
   
             
           }
