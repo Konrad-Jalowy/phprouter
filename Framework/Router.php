@@ -14,4 +14,17 @@ class Router
     echo "$requestMethod -> $uri </br>";
   }
 
+  public function registerRoute($method, $uri, $action)
+  {
+    list($controller, $controllerMethod) = explode('@', $action);
+
+    $this->routes[] = [
+      'method' => $method,
+      'uri' => $uri,
+      'controller' => $controller,
+      'controllerMethod' => $controllerMethod
+    ];
+  }
+
+
 }
