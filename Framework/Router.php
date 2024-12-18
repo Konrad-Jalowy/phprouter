@@ -23,6 +23,8 @@ class Router
 
       print_r($uriSegments);
       print_r($routeSegments);
+
+      $match = true;
     }
   }
 
