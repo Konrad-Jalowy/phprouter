@@ -44,6 +44,19 @@ class Router
   
           $match = true;
           echo "there is potential match";
+          for ($i = 0; $i < count($uriSegments); $i++) {
+           
+            if ($routeSegments[$i] !== $uriSegments[$i] && !preg_match('/\{(.+?)\}/', $routeSegments[$i])) {
+              $match = false;
+              echo "no match </br>";
+              break;
+            }
+  
+            
+          }
+          if($match){
+            echo "match! </br>";
+          }
         }
 
       }
