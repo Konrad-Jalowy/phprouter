@@ -15,11 +15,9 @@ class Router
 
     echo "$requestMethod -> $uri </br>";
     foreach ($this->routes as $route) {
-      print_r($route);
       
-
       if(!hasParams($route["uri"])){
-        echo "<b>route {$route["uri"]} has no params</b></br>";
+        
         if($route["uri"] === $uri){
           $instance = new $route["controller"];
           $methodtocall = $route["controllerMethod"];
@@ -31,37 +29,30 @@ class Router
         $uriSegments = explode('/', trim($uri, '/'));
         $routeSegments = explode('/', trim($route['uri'], '/'));
         
-  
-        print_r($uriSegments);
-        echo "</br>";
-        print_r($routeSegments);
-        echo "</br>";
-  
         $match = true;
   
         if (count($uriSegments) === count($routeSegments) && strtoupper($route['method'] === $requestMethod)) {
           $params = [];
   
           $match = true;
-          echo "there is potential match";
+
+         
           for ($i = 0; $i < count($uriSegments); $i++) {
            
             if ($routeSegments[$i] !== $uriSegments[$i] && !preg_match('/\{(.+?)\}/', $routeSegments[$i])) {
               $match = false;
-              echo "no match </br>";
               break;
             }
             if (preg_match('/\{(.+?)\}/', $routeSegments[$i], $matches)) {
-              // echo $matches[1];
-              // echo $uriSegments[$i];
               $params[$matches[1]] = $uriSegments[$i];
-              print_r($params);
             }
   
             
           }
           if($match){
-            echo "match! </br>";
+            $instance = new $route["controller"];
+          $methodtocall = $route["controllerMethod"];
+          $instance->$methodtocall(...$params);
           }
         }
 
