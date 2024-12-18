@@ -51,8 +51,8 @@ class Router
           }
           if($match){
             $instance = new $route["controller"];
-          $methodtocall = $route["controllerMethod"];
-          $instance->$methodtocall(...$params);
+            $methodtocall = $route["controllerMethod"];
+            $instance->$methodtocall(...$params);
           }
         }
 
@@ -95,6 +95,10 @@ class Router
   public function delete($uri, $controller)
   {
     $this->registerRoute('DELETE', $uri, $controller);
+  }
+
+  private function notFound(){
+    die("<h1>404 Not Found</h1>");
   }
 
 
