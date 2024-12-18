@@ -2,9 +2,9 @@
 
 ## how to start server
 ok well use such command to start a server:
-``sh
-php -S localhost:8000 -t public/
 ```
+php -S localhost:8000 -t public/
+```sh
 
 ## Before creation:
 Ive already done huge mvc framework project that was basically 3 other (not mine) projects combined + my own ideas </br>
