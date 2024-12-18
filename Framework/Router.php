@@ -13,7 +13,7 @@ class Router
 
     
 
-    echo "$requestMethod -> $uri </br>";
+    // echo "$requestMethod -> $uri </br>";
     $controllerUsed = false;
     foreach ($this->routes as $route) {
       
