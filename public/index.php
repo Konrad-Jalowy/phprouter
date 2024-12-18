@@ -2,14 +2,13 @@
 require '../helpers.php';
 
 spl_autoload_register(function($class){
-    if(str_ends_with($class, "Controller")){
+    if(str_ends_with($class, "Controller"))
         $path = basePath("App/Controllers/$class.php");
-    } else {
+    else 
         $path = basePath("Framework/$class.php");
-    }
-    if(file_exists($path)){
+    if(file_exists($path))
         require_once $path;
-    } 
+    
     
 });
 Session::start();
