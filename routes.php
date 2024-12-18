@@ -1,2 +1,2 @@
 <?php
-$router->get('/phprouter/', 'HomeController@index');
+$router->get('/', 'HomeController@index');
