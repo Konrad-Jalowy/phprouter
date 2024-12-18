@@ -26,5 +26,29 @@ class Router
     ];
   }
 
+  public function get($uri, $controller, $middleware = [])
+  {
+    $this->registerRoute('GET', $uri, $controller, $middleware);
+  }
+
+  
+  public function post($uri, $controller)
+  {
+    $this->registerRoute('POST', $uri, $controller);
+  }
+
+  
+  public function put($uri, $controller)
+  {
+    $this->registerRoute('PUT', $uri, $controller);
+  }
+
+  
+  public function delete($uri, $controller)
+  {
+    $this->registerRoute('DELETE', $uri, $controller);
+  }
+
+
 
 }
