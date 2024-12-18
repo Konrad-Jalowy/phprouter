@@ -29,7 +29,7 @@ class Router
         $params = [];
 
         $match = true;
-        echo "there is match";
+        echo "there is potential match";
       }
     }
   }
