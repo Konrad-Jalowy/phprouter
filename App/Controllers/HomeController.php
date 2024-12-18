@@ -5,6 +5,8 @@ class HomeController {
         loadView('index');
     }
     public function single($id){
-        loadView('single');
+        $person = (object)["name" => "Jane Doe $id", "age" => (18+$id)];
+        echo $person->age;
+        loadView('single', compact('person'));
     }
 };
