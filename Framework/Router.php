@@ -3,5 +3,7 @@
 class Router
 {
   protected $routes = [];
+  protected $prefix = "";
+
 
 }
