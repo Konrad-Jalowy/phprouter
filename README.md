@@ -5,6 +5,8 @@ ok well use such command to start a server:
 ```sh
 php -S localhost:8000 -t public/
 ```
+Its because i have this project in xampp. so there would be difference between folder structure and the uri</br>
+Like url from routes is "/" and the url in project is "localhost/projectfolder/". </br>
 
 ## Before creation:
 Ive already done huge mvc framework project that was basically 3 other (not mine) projects combined + my own ideas </br>
