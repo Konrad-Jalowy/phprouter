@@ -12,10 +12,10 @@ spl_autoload_register(function($class){
         }
     }
 });
-
+Session::start();
 $router = new Router();
 $routes = require basePath('routes.php');
-$session = new Session();
+
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
