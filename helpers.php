@@ -10,3 +10,8 @@ function redirect($url)
   header("Location: {$url}");
   exit;
 }
+
+
+function requireMe(){
+    echo "WORKS!";
+}
