@@ -14,6 +14,7 @@ class Router
     
 
     echo "$requestMethod -> $uri </br>";
+    $controllerUsed = false;
     foreach ($this->routes as $route) {
       
       if(!hasParams($route["uri"])){
@@ -22,6 +23,7 @@ class Router
           $instance = new $route["controller"];
           $methodtocall = $route["controllerMethod"];
           $instance->$methodtocall();
+          $controllerUsed = true;
           return;
         }
       } else {
@@ -53,13 +55,14 @@ class Router
             $instance = new $route["controller"];
             $methodtocall = $route["controllerMethod"];
             $instance->$methodtocall(...$params);
+            $controllerUsed = true;
           }
         }
 
       }
-     
     }
-    
+    if($controllerUsed === false)
+      $this->notFound();
   }
 
   public function registerRoute($method, $uri, $action)
